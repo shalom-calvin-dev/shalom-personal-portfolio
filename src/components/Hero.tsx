@@ -35,7 +35,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-28">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-6 pb-12 pt-10 sm:gap-14 sm:px-8 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-28">
         <motion.div
           variants={container}
           initial="hidden"
@@ -63,7 +63,7 @@ export function Hero() {
           <motion.h1
             id="hero-heading"
             variants={item}
-            className="mt-2 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mt-2 text-4xl font-semibold tracking-tight text-white min-[380px]:text-5xl sm:text-6xl lg:text-7xl"
           >
             {profile.name}
           </motion.h1>

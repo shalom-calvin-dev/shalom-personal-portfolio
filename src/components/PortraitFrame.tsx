@@ -6,7 +6,7 @@ type Props = { src: string | null; name: string };
 /** Portrait with a gradient ring. Falls back to a gradient placeholder when no image is set. */
 export function PortraitFrame({ src, name }: Props) {
   return (
-    <div className="relative mx-auto w-full max-w-[22rem] sm:max-w-sm lg:max-w-md">
+    <div className="relative mx-auto w-full max-w-[19rem] sm:max-w-sm lg:max-w-md">
       <div
         aria-hidden="true"
         className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-br from-blue-500/40 via-indigo-500/20 to-purple-500/40 blur-2xl"
@@ -19,7 +19,7 @@ export function PortraitFrame({ src, name }: Props) {
               alt={`Portrait of ${name}`}
               fill
               preload
-              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 22rem"
+              sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 19rem"
               className="object-cover object-top"
             />
           ) : (
