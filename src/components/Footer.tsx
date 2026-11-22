@@ -1,0 +1,49 @@
+import { ArrowUp } from "lucide-react";
+import { socialLinks } from "@/lib/contact";
+import { profile } from "@/lib/profile";
+import { CurrentYear } from "./CurrentYear";
+import { SocialIcon } from "./SocialIcon";
+
+export function Footer() {
+  return (
+    <footer className="relative border-t border-white/10 bg-footer">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-6 py-12 text-center sm:px-8 md:flex-row md:justify-between md:text-left">
+        <div>
+          <p className="text-lg font-semibold text-white">{profile.name}</p>
+          <p className="mt-1 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-sm font-medium text-transparent">
+            {profile.title}
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center gap-5 md:items-end">
+          <ul className="flex items-center gap-3">
+            {socialLinks.map((s) => (
+              <li key={s.id}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${s.label} (opens in a new tab)`}
+                  className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-300 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                >
+                  <SocialIcon id={s.id} className="size-[1.125rem]" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#top"
+            className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+          >
+            <ArrowUp className="size-4" aria-hidden="true" />
+            Back to Top
+          </a>
+        </div>
+      </div>
+
+      <div className="border-t border-white/5 px-6 py-5 text-center text-xs text-slate-400">
+        © <CurrentYear /> {profile.name}. All rights reserved.
+      </div>
+    </footer>
+  );
+}

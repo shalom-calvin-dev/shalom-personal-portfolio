@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* `light:` variant, driven by <html data-theme="light"> (set before paint by the inline script in layout.tsx). */
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+/* ---- Theme tokens: dark (default) ---- */
+:root {
+  color-scheme: dark;
+  --background: #070b1f;
+  --foreground: #e6eaf5;
+  --card: #0b1129;
+  --footer-bg: #050818;
+  --dot-bg: #070b1f;
+}
+
+/*
+ * ---- Theme tokens: light ----
+ * Components use Tailwind palette utilities (text-white, text-slate-*, border-white/10 ...).
+ * Re-pointing those palette variables here re-themes every component in one place:
+ * "white" becomes navy ink, so translucent white overlays become subtle navy overlays,
+ * and the light-on-dark slate/blue/purple text shades become darker, readable accents.
+ */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --footer-bg: #eef2f9;
+  --dot-bg: #ffffff;
+
+  --color-white: #0f172a;
+  --color-slate-100: #1e293b;
+  --color-slate-200: #1e293b;
+  --color-slate-300: #334155;
+  --color-slate-400: #475569;
+  --color-slate-500: #64748b;
+  --color-blue-100: #1e3a8a;
+  --color-blue-200: #1e40af;
+  --color-blue-300: #1d4ed8;
+  --color-blue-400: #2563eb;
+  --color-indigo-400: #4f46e5;
+  --color-purple-200: #5b21b6;
+  --color-purple-300: #6d28d9;
+  --color-purple-400: #7c3aed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-footer: var(--footer-bg);
+  --color-dot: var(--dot-bg);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keep anchored sections clear of the sticky header. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+/* Light mode: alternating section shades and card elevation. */
+:root[data-theme="light"] main > section:nth-of-type(even) {
+  background-color: #eef3fb;
+}
+
+:root[data-theme="light"] .bg-card {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 10px 28px -14px rgba(15, 23, 42, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

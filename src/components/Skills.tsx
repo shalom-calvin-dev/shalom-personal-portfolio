@@ -1,0 +1,43 @@
+import { skillCategories, skillsSection } from "@/lib/skills";
+import { Reveal } from "./Reveal";
+import { SkillCategoryCard } from "./SkillCategoryCard";
+
+export function Skills() {
+  return (
+    <section
+      id="skills"
+      aria-labelledby="skills-heading"
+      className="relative isolate overflow-hidden border-t border-white/5"
+    >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -right-40 top-10 size-[28rem] rounded-full bg-blue-600/15 blur-[120px]" />
+        <div className="absolute -left-40 bottom-10 size-[26rem] rounded-full bg-purple-600/15 blur-[120px]" />
+      </div>
+
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
+        <Reveal>
+          <p className="font-mono text-sm tracking-wide text-blue-300">{skillsSection.eyebrow}</p>
+          <h2
+            id="skills-heading"
+            className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            {skillsSection.heading}
+          </h2>
+        </Reveal>
+
+        <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+          {skillCategories.map((category, i) => (
+            <li
+              key={category.id}
+              className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}
+            >
+              <Reveal delay={(i % 3) * 0.08} className="h-full">
+                <SkillCategoryCard category={category} />
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}

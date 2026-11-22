@@ -1,0 +1,30 @@
+export const profile = {
+  name: "Shalom Calvin",
+  title: "Software Engineer",
+  experience: "3+ years",
+  company: "Star Knowledge Ventures",
+  focus: ["Backend Development", "Full Stack Development", "Microsoft Power Platform"],
+  intro:
+    "I'm a Software Engineer building scalable backend solutions, modern web applications and business automation solutions using Microsoft Power Platform.",
+  github: "https://github.com/shalom-calvin-dev",
+  linkedin: "https://www.linkedin.com/in/shalomcalvin",
+  technologies: [
+    "Node.js",
+    "Express.js",
+    "React",
+    "Next.js",
+    "PostgreSQL",
+    "JavaScript",
+    "TypeScript",
+    "C#",
+    ".NET",
+    "Python",
+    "Microsoft Power Platform",
+    "Power BI",
+    "Power Apps",
+    "Power Automate",
+    "Azure",
+  ],
+  // Path under /public. Set to null to fall back to the gradient placeholder.
+  portrait: "/profile.jpg" as string | null,
+} as const;
