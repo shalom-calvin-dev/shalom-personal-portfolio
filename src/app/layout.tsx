@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     ...(siteUrl ? { url: "/" } : {}),
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
   },
