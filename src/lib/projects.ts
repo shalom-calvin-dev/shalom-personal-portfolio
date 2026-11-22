@@ -81,7 +81,6 @@ export const projects: readonly Project[] = [
     ...source("quarter-end-close"),
     icon: "review",
     domain: "Finance",
-    client: "Global Manufacturing Company",
     kind: "professional",
     organization: employer,
     featured: true,
