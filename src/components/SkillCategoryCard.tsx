@@ -1,8 +1,8 @@
 import type { SkillCategory } from "@/lib/skills";
-import { SkillIcon, icons } from "./SkillIcon";
+import { SkillLogo, categoryIcons } from "./SkillIcon";
 
 export function SkillCategoryCard({ category }: { category: SkillCategory }) {
-  const Icon = icons[category.icon];
+  const Icon = categoryIcons[category.icon];
   const headingId = `skills-${category.id}`;
 
   return (
@@ -26,7 +26,7 @@ export function SkillCategoryCard({ category }: { category: SkillCategory }) {
               key={skill.name}
               className="group/skill flex items-center gap-3 rounded-lg border border-transparent px-1.5 py-1.5 transition hover:border-white/10 hover:bg-white/[0.03]"
             >
-              <SkillIcon skill={skill} />
+              <SkillLogo skill={skill} />
               <span className="text-sm leading-snug text-slate-300 transition group-hover/skill:text-white">
                 {skill.name}
               </span>

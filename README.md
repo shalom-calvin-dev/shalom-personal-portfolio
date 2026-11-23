@@ -81,6 +81,10 @@ npm run build
 npm start
 ```
 
+## Technology logos
+
+Technology logos in `public/brand-icons/` are taken, unmodified, from the [Devicon](https://devicon.dev/) project (MIT licence, see `public/brand-icons/LICENSE-devicon.txt`). Logos and trademarks belong to their respective owners. Technologies without a genuine logo available are shown as plain text labels.
+
 ## Configuration
 
 The site URL is intentionally not hardcoded. Canonical links, Open Graph URLs, `robots.txt` and `sitemap.xml` use it only when it is available.

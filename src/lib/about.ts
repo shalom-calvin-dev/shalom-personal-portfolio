@@ -1,25 +1,12 @@
 // About section content. Keep claims limited to verified information.
 export const about = {
   eyebrow: "About Me",
-  heading: "Building reliable systems that solve real business problems",
+  heading: "An engineering background with a software focus",
   paragraphs: [
-    "I'm a Software Engineer at Star Knowledge Ventures with 3+ years of experience designing and delivering secure REST APIs, enterprise automation solutions and scalable business applications across HR, finance, healthcare and operations.",
-    "On the backend, I build with Node.js, Express.js and PostgreSQL, with a focus on secure authentication, role-based access control and dependable data handling. On the frontend, I create responsive interfaces with React.js, JavaScript, HTML and CSS.",
-    "I hold the Microsoft Certified: Power Platform Solution Architect Expert (PL-600) and Microsoft Certified: Power Platform Developer Associate (PL-400) certifications, and deliver Power Apps, Power Automate workflows and Power BI dashboards on Dataverse, connecting them to web apps and third-party systems through APIs.",
-  ],
-  certifications: [
-    "Microsoft Certified: Power Platform Solution Architect Expert (PL-600)",
-    "Microsoft Certified: Power Platform Developer Associate (PL-400)",
-  ],
-  solutions: [
-    "Leave management and approval workflows",
-    "Performance evaluation workflows",
-    "Site visit and work-update tracking",
-    "Healthcare lab-test monitoring",
-    "Multi-source data integration for BI and reporting",
-    "Admin web applications and customer management backend APIs",
-    "Automated reporting with RPA",
-    "Live scoring and streaming APIs",
+    "I'm a Software Engineer at Star Knowledge Ventures with more than three years of experience building secure APIs, business applications and workflow automation in the HR, finance, healthcare and operations domains.",
+    "My path into software started in engineering. I studied Mechatronics Engineering and worked in CNC programming and industrial training before joining Star Knowledge Ventures in 2023.",
+    "On the backend I work mainly with Node.js, Express.js and PostgreSQL, building REST APIs with authentication and role-based access control. On the frontend I use React.js, Next.js and JavaScript. I also build business applications on Microsoft Power Platform, using Power Apps, Power Automate and Power BI on Dataverse, and connect them to web applications and third-party systems through APIs.",
+    "I'm most interested in backend engineering, system integration and automation, and I'm open to remote opportunities and relocation.",
   ],
   highlights: [
     {
@@ -35,15 +22,15 @@ export const about = {
       icon: "layers",
       title: "Full Stack Development",
       description:
-        "Responsive web interfaces with React.js, plus a Next.js admin dashboard powered by Node.js backend APIs.",
-      tags: ["React.js", "Next.js", "JavaScript", "HTML & CSS"],
+        "Responsive web interfaces built with React.js and Next.js, connected to Node.js backend APIs.",
+      tags: ["React.js", "Next.js", "JavaScript", "HTML", "CSS"],
     },
     {
       id: "power-platform",
       icon: "workflow",
       title: "Microsoft Power Platform",
       description:
-        "Canvas and Model-Driven apps, automated workflows and BI dashboards on Dataverse, backed by PL-400 and PL-600 certifications.",
+        "Canvas and Model-Driven apps, automated workflows and BI dashboards built on Dataverse.",
       tags: ["Power Apps", "Power Automate", "Power BI", "Dataverse"],
     },
   ],

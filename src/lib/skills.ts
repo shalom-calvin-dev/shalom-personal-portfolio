@@ -1,22 +1,13 @@
 // Skill list as confirmed by the portfolio owner. No ratings or proficiency levels by design.
-export type SkillIconKey =
-  | "hexagon" | "atom" | "database" | "globe" | "shield" | "key" | "code" | "palette"
-  | "table" | "spreadsheet" | "plug" | "bot" | "chart" | "zap" | "app" | "braces"
-  | "storage" | "fingerprint" | "share" | "files" | "workflow" | "cloud" | "layers"
-  | "server" | "sigma" | "logic";
+// Logos are resolved by name from src/lib/brand-icons.ts; skills without a genuine logo are text-only.
+export type CategoryIconKey = "server" | "layers" | "workflow" | "cloud" | "braces";
 
-export type Skill = {
-  name: string;
-  /** Lucide icon key. Used when no text mark is given. */
-  icon?: SkillIconKey;
-  /** Short text mark (monogram) used when no suitable icon exists. */
-  mark?: string;
-};
+export type Skill = { name: string };
 
 export type SkillCategory = {
   id: string;
   title: string;
-  icon: SkillIconKey;
+  icon: CategoryIconKey;
   skills: readonly Skill[];
 };
 
@@ -31,14 +22,14 @@ export const skillCategories: readonly SkillCategory[] = [
     title: "Backend Development",
     icon: "server",
     skills: [
-      { name: "Node.js", icon: "hexagon" },
-      { name: "Express.js", mark: "Ex" },
-      { name: "REST APIs", icon: "globe" },
-      { name: "C#", mark: "C#" },
-      { name: ".NET", mark: "NET" },
-      { name: "PostgreSQL", icon: "database" },
-      { name: "RBAC", icon: "shield" },
-      { name: "Authentication & Authorization", icon: "key" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "REST APIs" },
+      { name: "C#" },
+      { name: ".NET" },
+      { name: "PostgreSQL" },
+      { name: "RBAC" },
+      { name: "Authentication & Authorization" },
     ],
   },
   {
@@ -46,12 +37,12 @@ export const skillCategories: readonly SkillCategory[] = [
     title: "Frontend Development",
     icon: "layers",
     skills: [
-      { name: "React.js", icon: "atom" },
-      { name: "Next.js", mark: "N" },
-      { name: "TypeScript", mark: "TS" },
-      { name: "JavaScript", mark: "JS" },
-      { name: "HTML", icon: "code" },
-      { name: "CSS", icon: "palette" },
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "JavaScript" },
+      { name: "HTML" },
+      { name: "CSS" },
     ],
   },
   {
@@ -59,13 +50,13 @@ export const skillCategories: readonly SkillCategory[] = [
     title: "Microsoft Power Platform",
     icon: "workflow",
     skills: [
-      { name: "Power Apps (Canvas & Model-Driven)", icon: "app" },
-      { name: "Power Automate", icon: "zap" },
-      { name: "Power Automate Desktop", icon: "bot" },
-      { name: "Power BI", icon: "chart" },
-      { name: "Dataverse", icon: "database" },
-      { name: "Power Fx", icon: "sigma" },
-      { name: "Custom Connectors", icon: "plug" },
+      { name: "Power Apps (Canvas & Model-Driven)" },
+      { name: "Power Automate" },
+      { name: "Power Automate Desktop" },
+      { name: "Power BI" },
+      { name: "Dataverse" },
+      { name: "Power Fx" },
+      { name: "Custom Connectors" },
     ],
   },
   {
@@ -73,13 +64,13 @@ export const skillCategories: readonly SkillCategory[] = [
     title: "Cloud & Integrations",
     icon: "cloud",
     skills: [
-      { name: "Azure Functions", icon: "braces" },
-      { name: "Azure Logic Apps", icon: "logic" },
-      { name: "Azure Storage", icon: "storage" },
-      { name: "Azure Identity", icon: "fingerprint" },
-      { name: "Microsoft Graph API", icon: "share" },
-      { name: "SharePoint", icon: "files" },
-      { name: "Third-party API Integrations", icon: "plug" },
+      { name: "Azure Functions" },
+      { name: "Azure Logic Apps" },
+      { name: "Azure Storage" },
+      { name: "Azure Identity" },
+      { name: "Microsoft Graph API" },
+      { name: "SharePoint" },
+      { name: "Third-party API Integrations" },
     ],
   },
   {
@@ -87,11 +78,11 @@ export const skillCategories: readonly SkillCategory[] = [
     title: "Programming & Data",
     icon: "braces",
     skills: [
-      { name: "Python", mark: "Py" },
-      { name: "Pandas", icon: "table" },
-      { name: "SQL", icon: "database" },
-      { name: "MongoDB", icon: "database" },
-      { name: "Excel Automation", icon: "spreadsheet" },
+      { name: "Python" },
+      { name: "Pandas" },
+      { name: "SQL" },
+      { name: "MongoDB" },
+      { name: "Excel Automation" },
     ],
   },
 ];

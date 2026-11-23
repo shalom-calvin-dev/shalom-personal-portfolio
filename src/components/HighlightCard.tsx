@@ -1,4 +1,5 @@
 import { Layers, Server, Workflow, type LucideIcon } from "lucide-react";
+import { TechChip } from "./TechChip";
 
 const icons: Record<string, LucideIcon> = {
   server: Server,
@@ -25,12 +26,7 @@ export function HighlightCard({ icon, title, description, tags }: Props) {
         <p className="mt-2 text-sm leading-relaxed text-slate-400">{description}</p>
         <ul className="mt-5 flex flex-wrap gap-2" aria-label={`${title} technologies`}>
           {tags.map((t) => (
-            <li
-              key={t}
-              className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-slate-300"
-            >
-              {t}
-            </li>
+            <TechChip key={t} name={t} />
           ))}
         </ul>
       </div>

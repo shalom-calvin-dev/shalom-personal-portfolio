@@ -5,6 +5,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import { profile } from "@/lib/profile";
 import { GithubIcon, LinkedinIcon } from "./icons";
 import { PortraitFrame } from "./PortraitFrame";
+import { TechChip } from "./TechChip";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -147,12 +148,11 @@ export function Hero() {
             </p>
             <ul className="mt-3 flex flex-wrap justify-center gap-2 lg:justify-start">
               {profile.technologies.map((t) => (
-                <li
+                <TechChip
                   key={t}
-                  className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-slate-300 transition hover:border-purple-400/40 hover:text-white"
-                >
-                  {t}
-                </li>
+                  name={t}
+                  className="transition hover:border-purple-400/40 hover:text-white"
+                />
               ))}
             </ul>
           </motion.div>
