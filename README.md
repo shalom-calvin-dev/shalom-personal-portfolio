@@ -81,6 +81,27 @@ npm run build
 npm start
 ```
 
+## Technology logos
+
+The site shows 35 transparent PNG icons from `public/brand-icons/`. No SVG file is stored in `public/`, so none is served by the website. Each PNG was rendered, without edits, from an SVG source (a Devicon, Lucide or supplied Microsoft SVG kept in a local git-ignored archive, or one of the original illustrations in `design/brand-icons/original/`). Converting an SVG to PNG does not change its licence or trademark status. Full per-file source, checksum and licence status is in [`ICON-ASSETS-NOTICE.txt`](ICON-ASSETS-NOTICE.txt).
+
+**Active icons**
+
+- **Open-source logos** come from the [Devicon](https://devicon.dev/) project (MIT licence, see `public/brand-icons/LICENSE-devicon.txt`). The C#, .NET and Azure marks are Microsoft brand marks that Devicon redistributes; the MIT licence is not a Microsoft permission for them.
+- **Microsoft product icons** (Power Apps, Power Automate, Power BI, Power Platform, Dataverse, Power Fx, Azure Functions, Azure Logic Apps, Custom Connectors, SQL and SharePoint). Most are byte-identical to files in Microsoft's official Power Platform and Azure icon downloads. Microsoft permits those icons in architectural diagrams, training materials or documentation and reserves all other rights. The site owner states they hold permission to use them on this site; that statement is recorded but not independently verified, and no endorsement by Microsoft is implied. SharePoint and Power BI match only a community mirror (MS Icons), and Power Fx comes from Simple Icons, which cites Microsoft's icon guidance.
+- **Original artwork** (`design/brand-icons/original/`): the RTMP, Authentication & Authorization, Third-party API, Excel, Microsoft Graph API, Office 365 Connectors, Azure Identity and Azure Storage icons are simple generic illustrations drawn for this portfolio. They are not copies of any company's logo. Their licence has not been formally determined.
+- **REST APIs** uses the [Lucide](https://lucide.dev/) `arrow-left-right` icon (ISC licence, see `public/brand-icons/LICENSE-lucide.txt`).
+
+**Archived originals (not published)**
+
+Eight earlier supplied SVG files were replaced because their origin or licence could not be verified, or because the artwork did not match the technology: RTMP, Authentication & Authorization, Third Party API, Excel, Microsoft Graph API, Office 365 Connectors, Azure Identity and Azure Blob Storage. They are kept unmodified, together with a PNG conversion of each, in a local git-ignored folder. They are not part of the repository or the deployed site, and their licensing remains unverified.
+
+**Reproducibility**
+
+The PNG files are committed, so the site builds without any extra step. The SVG sources of most icons and the helper script that renders the PNGs are kept only in a local git-ignored folder, so the PNGs cannot be regenerated from this repository alone. The eight original illustrations can be re-rendered from the SVG files in `design/brand-icons/original/`.
+
+Logos and trademarks belong to their respective owners. Technologies without a suitable icon are shown as plain text labels.
+
 ## Configuration
 
 The site URL is intentionally not hardcoded. Canonical links, Open Graph URLs, `robots.txt` and `sitemap.xml` use it only when it is available.

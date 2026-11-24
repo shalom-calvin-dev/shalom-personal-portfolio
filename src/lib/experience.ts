@@ -125,6 +125,9 @@ export const experience: readonly ExperienceEntry[] = [
     end: "2022-11",
     highlights: [
       "Completed technical training in industrial software tools and engineering workflows.",
+      "Received CAD/CAM software training and hands-on exposure to manufacturing software tools, including Mastercam, Autodesk Fusion, Autodesk PowerMill and Eureka.",
+      "Developed an understanding of CNC programming and manufacturing workflows, building on my earlier CNC programming experience.",
+      "Gained exposure to design, machining and manufacturing-related processes through practical, industry-based learning.",
     ],
   },
   {
@@ -138,6 +141,9 @@ export const experience: readonly ExperienceEntry[] = [
     highlights: [
       "Programmed CNC machines (VTC, HTC and VMC) for high-precision valve components.",
       "Interpreted engineering drawings and applied G-code to ensure dimensional accuracy.",
+      "Turned technical drawings into machining programs that met the dimensional and quality requirements of precision valve manufacturing.",
+      "Worked within a manufacturing environment, applying programming and machining knowledge to the machining workflow.",
+      "Built practical, hands-on experience in precision manufacturing, where accuracy and attention to detail were essential.",
     ],
   },
   {
@@ -150,6 +156,9 @@ export const experience: readonly ExperienceEntry[] = [
     end: "2019",
     highlights: [
       "Gained hands-on exposure to railway technology systems, maintenance workflows and operational engineering processes.",
+      "Applied theoretical engineering knowledge to practical, industry-based work.",
+      "Developed an understanding of professional engineering workflows by learning from real-world technical tasks.",
+      "Strengthened problem-solving and technical skills through practical industry exposure.",
     ],
   },
 ];

@@ -1,8 +1,11 @@
 import type { SkillCategory } from "@/lib/skills";
-import { SkillIcon, icons } from "./SkillIcon";
+import { SkillLogo, categoryIcons } from "./SkillIcon";
+
+/** Skill names longer than this many characters span the full width of a two-column list. */
+const WIDE_NAME_LENGTH = 21;
 
 export function SkillCategoryCard({ category }: { category: SkillCategory }) {
-  const Icon = icons[category.icon];
+  const Icon = categoryIcons[category.icon];
   const headingId = `skills-${category.id}`;
 
   return (
@@ -20,14 +23,19 @@ export function SkillCategoryCard({ category }: { category: SkillCategory }) {
           </h3>
         </div>
 
-        <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <ul className="mt-6 grid gap-x-2 gap-y-2.5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           {category.skills.map((skill) => (
             <li
               key={skill.name}
-              className="group/skill flex items-center gap-3 rounded-lg border border-transparent px-1.5 py-1.5 transition hover:border-white/10 hover:bg-white/[0.03]"
+              // min-h keeps every row the same height whether or not it has a logo tile.
+              className={`group/skill flex min-h-[50px] items-center gap-2.5 rounded-lg border border-transparent px-1.5 py-1.5 transition hover:border-white/10 hover:bg-white/[0.03] ${
+                // Very long names take a full row (same breakpoints as the grid) instead of
+                // wrapping onto many lines inside a narrow column.
+                skill.name.length > WIDE_NAME_LENGTH ? "sm:col-span-2 lg:col-span-1 xl:col-span-2" : ""
+              }`}
             >
-              <SkillIcon skill={skill} />
-              <span className="text-sm leading-snug text-slate-300 transition group-hover/skill:text-white">
+              <SkillLogo skill={skill} />
+              <span className="min-w-0 text-pretty text-sm leading-snug text-slate-300 transition group-hover/skill:text-white">
                 {skill.name}
               </span>
             </li>

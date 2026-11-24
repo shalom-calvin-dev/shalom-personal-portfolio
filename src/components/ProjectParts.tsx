@@ -14,6 +14,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Project, ProjectIconKey, ProjectLink } from "@/lib/projects";
+import { TechChip } from "./TechChip";
 
 export const projectIcons: Record<ProjectIconKey, LucideIcon> = {
   clipboard: ClipboardList,
@@ -33,12 +34,7 @@ export function TagList({ tags, label }: { tags: readonly string[]; label: strin
   return (
     <ul className="flex flex-wrap gap-2" aria-label={label}>
       {tags.map((t) => (
-        <li
-          key={t}
-          className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-xs text-slate-300"
-        >
-          {t}
-        </li>
+        <TechChip key={t} name={t} />
       ))}
     </ul>
   );
