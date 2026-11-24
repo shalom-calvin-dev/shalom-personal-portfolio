@@ -1,0 +1,183 @@
+TECHNOLOGY ICON ASSETS - SOURCE, LICENCE AND PERMISSION STATUS
+========================================================
+
+How the icons are used
+----------------------
+The website shows transparent PNG files from public/brand-icons/. Each PNG is an unedited
+rasterisation (256 x 256, original proportions) of an SVG source, made by a local helper script that is
+not part of the repository. Converting an SVG to PNG does not change the licence or trademark status of
+the artwork. Eight PNGs are rendered from ORIGINAL artwork in design/brand-icons/original/ (rtmp,
+authentication, third-party-api, excel, microsoft-graph-api, office-365-connectors,
+azure-identity, azure-storage). The other PNGs are rendered, without any edit, from the SVG files
+listed below. No SVG file is stored in public/ (so none is served by the website). The SVG sources of the other
+PNGs, and eight supplied files whose origin is unverified or whose artwork did not match, are kept
+unmodified in a local, git-ignored archive (reference/icon-archive/) that is not part of the repository. No artwork
+was redrawn, simplified or recoloured. Trademarks belong to their owners; this site is not
+affiliated with, endorsed by or sponsored by Microsoft.
+
+Status codes used below
+-----------------------
+  A  Microsoft's own artwork: byte-identical to a file in Microsoft's official icon downloads
+     (A* = official file, but Microsoft gives it a different name than the technology shown).
+  B  Redistributed by a third party that cites Microsoft's own icon guidance as the source.
+  C  Matches a community mirror (MS Icons) only; not found in Microsoft's official downloads.
+  D  Supplied by the owner; origin could NOT be verified. Licence and permission unconfirmed.
+  E  Unknown licence.
+
+SVG files whose artwork is shown on the website
+(source files: local archive reference/icon-archive/source-svg/, not in the repository)
+-----------------------------------------------
+  power-apps.svg  [A]
+      sha256: c357907ad0a2d24a6d8c82b23fe4d2aaa4a4524076991f74770fc043a4cc455a
+      technology: Power Apps   png: power-apps.png
+      evidence: Microsoft Power Platform icon package (Power-Platform-icons-scalable.zip): PowerApps_scalable.svg, identical bytes
+
+  power-automate.svg  [A]
+      sha256: 2025db7bb3feec49d75681934b8561fb958cf11bdf0e2acf6e2b28db5c755e8d
+      technology: Power Automate, Power Automate Desktop, RPA   png: power-automate.png
+      evidence: Power Platform icon package: PowerAutomate_scalable.svg, identical bytes
+
+  dataverse.svg  [A]
+      sha256: df71c0111148d116515a02c5cb07483caad2bcb779664fa16fd837a4709504ab
+      technology: Dataverse   png: dataverse.png
+      evidence: Power Platform icon package: Dataverse_scalable.svg, identical bytes
+
+  power-platform.svg  [A]
+      sha256: b2ff39a709d7424fe130c69108381a123a3c6cfc76a8f5890a8a03a820857d8d
+      technology: Power Platform   png: power-platform.png
+      evidence: Azure Public Service Icons V25: 03335-icon-service-Power-Platform.svg, identical bytes (the Power Platform package has a different PowerPlatform_scalable.svg)
+
+  azure-function-apps.svg  [A]
+      sha256: 1a6c9c108d5f63f7b78bc6fbc464059acd2eaa8c1d111e9bcd28a8b2cdf470b9
+      technology: Azure Functions   png: azure-functions.png
+      evidence: Azure Public Service Icons V25: 10029-icon-service-Function-Apps.svg, identical bytes
+
+  azure-logic-apps.svg  [A]
+      sha256: 3390e6337469e29d755a4077b64efcf0b0269ee871113417fd4458269351b438
+      technology: Azure Logic Apps   png: azure-logic-apps.png
+      evidence: Azure Public Service Icons V25: 02631-icon-service-Logic-Apps.svg, identical bytes
+
+  custom-connector.svg  [A]
+      sha256: 7078d93249cddd0a3ed6b8c8dc6fccac091eac06c7ea8d1ac7515578581940bf
+      technology: Custom Connectors   png: custom-connector.png
+      evidence: Azure Public Service Icons V25: 10363-icon-service-Logic-Apps-Custom-Connector.svg, identical bytes (the Logic Apps custom connector icon)
+
+  SQL Server.svg  [A]
+      sha256: 72c6104c5f2199f6eaebbc215c5cb78dea9c1d571b95f470341ca7f83eee5be8
+      technology: SQL   png: sql-server.png
+      evidence: Azure Public Service Icons V25: 10132-icon-service-SQL-Server.svg, identical bytes
+
+  powerfx.svg  [B]
+      sha256: 3503f41b98ae7c8aabc9c1606b9eb9447cb7266fa2ab992ec83368745115d871
+      technology: Power Fx   png: powerfx.png
+      evidence: Identical bytes to the Simple Icons file icons/powerfx.svg (v8 to v12). Simple Icons lists its source and licence as Microsoft's Power Platform icon guidance (learn.microsoft.com/power-platform/guidance/icons), licence type "custom". The CC0 licence of the Simple Icons repository does not grant Microsoft's rights.
+
+  Microsoft Office Sharepoint.svg  [C]
+      sha256: 26e0344c167c47ae853091cc64da45c196410c6f1372b58f0099764b787eb9f1
+      technology: SharePoint   png: sharepoint.png
+      evidence: Identical bytes to "Microsoft Office SharePoint 2025" on MS Icons (msicons.com), a community mirror. No match in Microsoft's Azure or Power Platform packages.
+
+  power-bi.svg  [C]
+      sha256: c4f4a693d4fe893f956ca70a7d866168a453312b36753fc75eee3797aedcc700
+      technology: Power BI   png: power-bi.png
+      evidence: From MS Icons (Microsoft Fabric icon set), a community mirror. No match in Microsoft's Azure or Power Platform packages.
+
+Supplied SVG files that are NO LONGER USED
+------------------------------------------
+These eight files are kept unmodified in the local, git-ignored archive reference/icon-archive/original-svg/
+(with a PNG conversion of each in reference/icon-archive/original-png/). They are NOT in public/ and NOT in the repository.
+The ninth entry, Automation.svg, was never mapped and is kept in reference/icon-archive/source-svg/.
+
+  Azure Identity.svg  [A*]
+      sha256: 8fafc3edf57c3be54259ae9d726c49f3ab1576688c11208b36975aef34181be1
+      technology: was Azure Identity   png: azure-identity.png (now original artwork)
+      evidence: Azure Public Service Icons V25: 10229-icon-service-Azure-Information-Protection.svg, identical bytes. Microsoft names it Azure Information Protection, so it did not match "Azure Identity". NOT USED.
+
+  Azure Blob Storage.svg  [A*]
+      sha256: 3984789ed792b47bb3ee6e744d75e47c06cd8fe3df5d61fd472ab0101b56fdd0
+      technology: was Azure Storage / Blob Storage   png: azure-storage.png (now original artwork)
+      evidence: Azure Public Service Icons V25: 10838-icon-service-Storage-Azure-Files.svg, identical bytes. Microsoft names it Azure Files, so it did not match Blob Storage. NOT USED.
+
+  Automation.svg  [A]
+      sha256: 4ad2825c024842fa6ea8875cf4098a8574b33b329301163282a7c6df43d6d7b4
+      technology: (never mapped)   png: (none)
+      evidence: Azure Public Service Icons V25: 00022-icon-service-Automation-Accounts.svg, identical bytes. NOT USED.
+
+  excel.svg  [D]
+      sha256: 5bc26d57588379670dbe146095096bdb9b615c0b6904153bdeffc81e7904949d
+      technology: was Excel   png: excel.png (now original artwork)
+      evidence: UNVERIFIED origin (Illustrator export with Russian layer names; not in Microsoft packages or Simple Icons). NOT USED.
+
+  Microsoft Graph API.svg  [D]
+      sha256: f075c0217c219bb95e0dff794c6b839358a41c00586ba6f239aec81e401300c1
+      technology: was Microsoft Graph API   png: microsoft-graph-api.png (now original artwork)
+      evidence: UNVERIFIED origin (Adobe Illustrator export; not in Microsoft packages). NOT USED.
+
+  Office 365 Connectors.svg  [D]
+      sha256: c7cdbbc7aa89744be17ceae8545e73f0c3937efcce06d44f353035eb0ceb1259
+      technology: was Office 365 Connectors   png: office-365-connectors.png (now original artwork)
+      evidence: UNVERIFIED origin (design-tool export; not in Microsoft packages). NOT USED.
+
+  RTMP.svg  [E]
+      sha256: e9ebe5411cd466f2a08c981cf9312b4e623cd426c3a45136357d7c34f94cb587
+      technology: was RTMP   png: rtmp.png (now original artwork)
+      evidence: UNKNOWN LICENCE. Header says "Uploaded to: SVG Repo" with no licence text. NOT USED.
+
+  Authentication & Authorization.svg  [E]
+      sha256: b413b68bdaef5f10bfb751ea5f04aefdb428d7006740ae91234cc53b1dd1ddbe
+      technology: was Authentication & Authorization   png: authentication.png (now original artwork)
+      evidence: UNKNOWN ORIGIN AND LICENCE. Blue palette is not Microsoft's. NOT USED.
+
+  Third Party API.svg  [A*]
+      sha256: 3a14d20c47cf4cf8ff4891e09d2eb775eeafc2bb6ce0629d2d8d6470f69725a7
+      technology: was Third-party API Integrations   png: third-party-api.png (now original artwork)
+      evidence: Azure Public Service Icons V25: 03291-icon-service-API-Center.svg, identical bytes. Microsoft names it the API Center icon, not a third-party API icon. NOT USED; replaced by original artwork at the owner's request.
+
+Other artwork
+-------------
+  Devicon (MIT licence, v2.18.0, see public/brand-icons/LICENSE-devicon.txt): javascript, typescript, nodejs, express,
+    react, nextjs, python, csharp, dotnetcore, postgresql, mongodb, pandas, html5, css3, azure.
+    The MIT licence covers Devicon's files. The C#, .NET and Azure marks are Microsoft brand marks,
+    and the MIT licence is not a Microsoft permission for them.
+  Lucide (ISC licence, see public/brand-icons/LICENSE-lucide.txt): rest-api.svg ("arrow-left-right", a generic concept
+    icon, unmodified apart from its stroke colour).
+  ORIGINAL artwork (design/brand-icons/original/*.svg): simple generic shapes drawn for this
+    portfolio by Claude (an AI assistant) at the site owner's request. They are not copies or
+    traces of any logo or icon file, and the identity and storage illustrations are not Microsoft
+    Entra or Azure artwork. Ownership and licence of this artwork have not been formally
+    determined; no licence is claimed here.
+
+Power Automate, Power Automate Desktop and RPA all use power-automate.png.
+
+Microsoft's terms (quoted, not paraphrased)
+-------------------------------------------
+Sources: https://learn.microsoft.com/en-us/power-platform/guidance/icons
+         https://learn.microsoft.com/en-us/azure/architecture/icons/#icon-terms
+  "Microsoft permits the use of these icons in architectural diagrams, training materials, or
+   documentation. You may copy, distribute, and display the icons only for the permitted use unless
+   granted explicit permission by Microsoft. Microsoft reserves all other rights."
+Microsoft's general guidance (https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks)
+also states that its logos and product icons require an express licence and that permission can be
+revoked. Microsoft's guidance also says: do not crop, flip, rotate or distort the icons, and show
+the product name next to the icon.
+
+Permission status
+-----------------
+The site owner has stated that they hold permission to use the Microsoft product icons on this
+public portfolio. No written permission document is kept in this repository, so that statement is
+recorded as the owner's claim and has not been independently verified. This notice does not claim
+that Microsoft has granted permission. Keep a copy of the written permission with your own records.
+
+Remaining licensing concerns
+----------------------------
+  1. Microsoft permission is the owner's statement only (see above). It applies to the Microsoft
+     icons still shown: status A, B and C files in the first list.
+  2. SharePoint and Power BI (status C) match only a community mirror, not Microsoft's downloads.
+  3. Power Fx (status B) is licensed "custom" by reference to Microsoft's guidance; the CC0 licence of
+     the Simple Icons repository does not grant Microsoft's rights.
+  4. The Devicon C#, .NET and Azure marks are Microsoft brand marks redistributed under Devicon's MIT
+     licence, which is not a Microsoft permission.
+  5. The original artwork has no formally determined licence or ownership.
+  6. The eight archived originals (status A*, D and E above) are not in public/ and not in the
+     repository, so the website does not serve them. Their licence and origin concerns remain if you ever
+     publish or reuse them. The active replacements are the original neutral PNG illustrations.

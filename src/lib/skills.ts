@@ -1,5 +1,6 @@
 // Skill list as confirmed by the portfolio owner. No ratings or proficiency levels by design.
-// Logos are resolved by name from src/lib/brand-icons.ts; skills without a genuine logo are text-only.
+// Icons (brand logos or original illustrations) are resolved by name from src/lib/brand-icons.ts;
+// skills without a matching icon are shown as text only.
 export type CategoryIconKey = "server" | "layers" | "workflow" | "cloud" | "braces";
 
 export type Skill = { name: string };
@@ -28,7 +29,6 @@ export const skillCategories: readonly SkillCategory[] = [
       { name: "C#" },
       { name: ".NET" },
       { name: "PostgreSQL" },
-      { name: "RBAC" },
       { name: "Authentication & Authorization" },
     ],
   },
@@ -52,8 +52,8 @@ export const skillCategories: readonly SkillCategory[] = [
     skills: [
       { name: "Power Apps (Canvas & Model-Driven)" },
       { name: "Power Automate" },
-      { name: "Power Automate Desktop" },
       { name: "Power BI" },
+      { name: "Power Automate Desktop" },
       { name: "Dataverse" },
       { name: "Power Fx" },
       { name: "Custom Connectors" },

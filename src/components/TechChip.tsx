@@ -1,7 +1,7 @@
 import { brandKeyFor } from "@/lib/brand-icons";
 import { BrandLogo } from "./BrandLogo";
 
-/** Technology tag (renders an <li>). Shows the official logo when one exists, otherwise just the name. */
+/** Technology tag (renders an <li>). Shows its icon (brand logo or original illustration) when one exists, otherwise just the name. */
 export function TechChip({ name, className = "" }: { name: string; className?: string }) {
   const brand = brandKeyFor(name);
   return (

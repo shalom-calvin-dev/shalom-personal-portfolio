@@ -13,15 +13,11 @@ export const categoryIcons: Record<CategoryIconKey, LucideIcon> = {
 };
 
 /**
- * Fixed-size slot in front of a skill name: the official logo when one exists,
- * otherwise a small neutral marker so names stay aligned (the name itself is the text label).
+ * The technology icon (a brand logo or an original illustration) in front of a skill name when
+ * one exists. Skills without an icon render nothing here (no empty tile, placeholder or marker):
+ * the name is shown as plain text.
  */
 export function SkillLogo({ skill }: { skill: Skill }) {
   const brand = brandKeyFor(skill.name);
-  if (brand) return <BrandLogo brand={brand} size="md" />;
-  return (
-    <span aria-hidden="true" className="flex size-9 shrink-0 items-center justify-center">
-      <span className="size-1.5 rounded-full bg-slate-500/60" />
-    </span>
-  );
+  return brand ? <BrandLogo brand={brand} size="md" /> : null;
 }

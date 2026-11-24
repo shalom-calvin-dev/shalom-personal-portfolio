@@ -15,7 +15,7 @@ export const about = {
       title: "Backend Development",
       description:
         "Secure REST APIs that connect Power Platform, web apps and third-party systems, backed by PostgreSQL with validation and error handling.",
-      tags: ["Node.js", "Express.js", "REST APIs", "PostgreSQL", "RBAC"],
+      tags: ["Node.js", "Express.js", "REST APIs", "PostgreSQL"],
     },
     {
       id: "fullstack",
