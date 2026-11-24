@@ -1,6 +1,7 @@
 import { skillCategories, skillsSection } from "@/lib/skills";
 import { Reveal } from "./Reveal";
 import { SkillCategoryCard } from "./SkillCategoryCard";
+import { SkillsAccordion } from "./SkillsAccordion";
 
 export function Skills() {
   return (
@@ -25,7 +26,13 @@ export function Skills() {
           </h2>
         </Reveal>
 
-        <ul className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+        {/* Mobile (below md): numbered single-open accordion. */}
+        <Reveal className="mt-10 md:hidden">
+          <SkillsAccordion />
+        </Reveal>
+
+        {/* md and up: the original card grid, unchanged. */}
+        <ul className="mt-14 hidden gap-6 md:grid md:grid-cols-2 lg:grid-cols-6">
           {skillCategories.map((category, i) => (
             <li
               key={category.id}
