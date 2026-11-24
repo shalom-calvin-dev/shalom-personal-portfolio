@@ -10,7 +10,7 @@ export function FeaturedProjectCard({ project }: { project: Project }) {
       aria-labelledby={headingId}
       className="h-full rounded-2xl bg-gradient-to-br from-blue-400/50 via-white/10 to-purple-500/50 p-px transition duration-300 hover:-translate-y-1 hover:from-blue-400/80 hover:to-purple-500/80"
     >
-      <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1rem-1px)] bg-card p-7 sm:p-8">
+      <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1rem-1px)] bg-card p-5 sm:p-8">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-indigo-500/20 blur-3xl"
@@ -24,16 +24,16 @@ export function FeaturedProjectCard({ project }: { project: Project }) {
           </span>
         </div>
 
-        <h3 id={headingId} className="relative mt-6 text-xl font-semibold text-white sm:text-2xl">
+        <h3 id={headingId} className="relative mt-5 text-xl font-semibold text-white sm:mt-6 sm:text-2xl">
           {project.name}
         </h3>
         <div className="relative mt-3">
           <ProjectBadges project={project} />
         </div>
-        <p className="relative mt-5 flex-1 text-base leading-relaxed text-slate-400">
+        <p className="relative mt-4 flex-1 text-base leading-relaxed text-slate-400 sm:mt-5">
           {project.description}.
         </p>
-        <div className="relative mt-6">
+        <div className="relative mt-5 sm:mt-6">
           <TagList tags={project.tags} label={`${project.name} technologies`} />
         </div>
         <div className="relative">

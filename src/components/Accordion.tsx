@@ -21,6 +21,12 @@ type AccordionProps = {
   defaultOpenId?: string | null;
   /** Heading level wrapped around each header button. */
   headingLevel?: 2 | 3 | 4;
+  /**
+   * From the md breakpoint up, hide the header rows and always show every panel (no clipping, no
+   * extra spacing), so the same markup doubles as the plain desktop layout. Below md it is a normal
+   * accordion. Use when the content should not be duplicated for mobile and desktop.
+   */
+  alwaysOpenFromMd?: boolean;
   className?: string;
 };
 
@@ -32,7 +38,13 @@ type AccordionProps = {
  *    open/close animates the height. Animations are off under prefers-reduced-motion.
  * It has no breakpoint logic: callers decide where it is shown (e.g. wrap it in `md:hidden`).
  */
-export function Accordion({ items, defaultOpenId = null, headingLevel = 3, className = "" }: AccordionProps) {
+export function Accordion({
+  items,
+  defaultOpenId = null,
+  headingLevel = 3,
+  alwaysOpenFromMd = false,
+  className = "",
+}: AccordionProps) {
   const baseId = useId();
   const [openId, setOpenId] = useState<string | null>(defaultOpenId);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
@@ -60,7 +72,7 @@ export function Accordion({ items, defaultOpenId = null, headingLevel = 3, class
 
         return (
           <div key={item.id}>
-            <Heading className="m-0">
+            <Heading className={alwaysOpenFromMd ? "m-0 md:hidden" : "m-0"}>
               <button
                 ref={(el) => {
                   buttons.current[index] = el;
@@ -124,10 +136,10 @@ export function Accordion({ items, defaultOpenId = null, headingLevel = 3, class
               aria-labelledby={headerId}
               className={`grid transition-[grid-template-rows,visibility] duration-300 motion-reduce:transition-none ${
                 open ? "visible grid-rows-[1fr]" : "invisible grid-rows-[0fr]"
-              }`}
+              } ${alwaysOpenFromMd ? "md:visible md:grid-rows-[1fr]" : ""}`}
             >
-              <div className="min-h-0 overflow-hidden">
-                <div className="pt-2">{item.content}</div>
+              <div className={`min-h-0 overflow-hidden ${alwaysOpenFromMd ? "md:overflow-visible" : ""}`}>
+                <div className={`pt-2 ${alwaysOpenFromMd ? "md:pt-0" : ""}`}>{item.content}</div>
               </div>
             </div>
           </div>
