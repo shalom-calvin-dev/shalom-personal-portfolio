@@ -9,7 +9,7 @@ import { TechChip } from "./TechChip";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export function Hero() {
+export function Hero({ experienceLabel }: { experienceLabel: string }) {
   const reduce = useReducedMotion();
 
   const container: Variants = {
@@ -51,7 +51,7 @@ export function Hero() {
               <span className="absolute inline-flex size-full rounded-full bg-blue-400/60 motion-safe:animate-ping" />
               <span className="relative inline-flex size-2 rounded-full bg-blue-400" />
             </span>
-            {profile.experience} experience · {profile.company}
+            {experienceLabel} experience · {profile.company}
           </motion.p>
 
           <motion.p

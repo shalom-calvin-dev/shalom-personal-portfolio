@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:years": "node scripts/test-years-of-experience.mjs"
   },
   "dependencies": {
     "framer-motion": "^14.14.0",
