@@ -83,16 +83,16 @@ export function Accordion({
                 aria-controls={panelId}
                 onClick={() => setOpenId(open ? null : item.id)}
                 onKeyDown={(e) => onKeyDown(e, index)}
-                className={`flex min-h-[60px] w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 motion-reduce:transition-none ${
+                className={`flex min-h-[60px] w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none ${
                   open
-                    ? "border-transparent bg-gradient-to-r from-blue-600 to-purple-600 text-[#ffffff] shadow-lg shadow-indigo-500/20"
-                    : "border-white/10 bg-white/[0.04] text-white hover:border-blue-400/40 light:bg-[#ffffff]"
+                    ? "border-accent-fill bg-accent-fill text-on-accent"
+                    : "border-line bg-white/[0.04] text-white hover:border-accent/40 light:bg-[#ffffff]"
                 }`}
               >
                 {item.number && (
                   <span
                     aria-hidden="true"
-                    className={`font-mono text-sm tabular-nums ${open ? "text-[#ffffff]/70" : "text-slate-400"}`}
+                    className={`font-mono text-sm tabular-nums ${open ? "text-on-accent/90" : "text-slate-400"}`}
                   >
                     {item.number}
                   </span>
@@ -100,7 +100,7 @@ export function Accordion({
                 <span className="min-w-0 flex-1">
                   <span className="block text-base font-semibold leading-snug">{item.title}</span>
                   {item.subtitle && (
-                    <span className={`mt-0.5 block text-sm ${open ? "text-[#ffffff]/80" : "text-slate-400"}`}>
+                    <span className={`mt-0.5 block text-sm ${open ? "text-on-accent/90" : "text-slate-400"}`}>
                       {item.subtitle}
                     </span>
                   )}
@@ -108,7 +108,7 @@ export function Accordion({
                 {item.badge && (
                   <span
                     className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                      open ? "bg-[#ffffff]/20 text-[#ffffff]" : "bg-white/10 text-slate-300"
+                      open ? "bg-on-accent/10 text-on-accent" : "bg-white/10 text-slate-300"
                     }`}
                   >
                     {item.badge}
@@ -117,7 +117,7 @@ export function Accordion({
                 <span
                   aria-hidden="true"
                   className={`flex size-8 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 motion-reduce:transition-none ${
-                    open ? "border-[#ffffff]/40 bg-[#ffffff]/15 text-[#ffffff]" : "border-white/15 text-slate-300"
+                    open ? "border-on-accent/40 bg-on-accent/15 text-on-accent" : "border-line-strong text-slate-300"
                   }`}
                 >
                   {/* Right arrow when closed, turns to point down when open. */}

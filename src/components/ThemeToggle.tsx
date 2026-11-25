@@ -69,7 +69,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={`Switch to ${next} mode`}
       title={`Switch to ${next} mode`}
-      className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-blue-400/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+      className="inline-flex size-10 items-center justify-center rounded-full border border-line bg-white/[0.04] text-slate-300 transition hover:border-accent/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
       {/* Both icons are always rendered; CSS (driven by data-theme) shows the right one, so there is no icon flash before hydration. */}
       <Sun className="size-5 light:hidden" aria-hidden="true" />

@@ -11,18 +11,14 @@ export async function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative isolate overflow-hidden border-t border-white/5"
+      className="relative isolate overflow-hidden border-t border-line"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -right-40 top-10 size-[30rem] rounded-full bg-indigo-600/15 blur-[120px]" />
-        <div className="absolute -left-40 bottom-0 size-[26rem] rounded-full bg-blue-600/15 blur-[120px]" />
-      </div>
 
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
         {/* Single centered column with a readable line length (~70 characters). */}
         <div className="mx-auto max-w-3xl">
           <Reveal>
-            <p className="font-mono text-sm tracking-wide text-blue-300">{about.eyebrow}</p>
+            <p className="font-mono text-sm tracking-wide text-accent">{about.eyebrow}</p>
             <h2
               id="about-heading"
               className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"

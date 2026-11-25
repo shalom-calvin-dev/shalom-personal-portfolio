@@ -22,20 +22,13 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
   };
 
   const socialClass =
-    "inline-flex size-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-300 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400";
+    "inline-flex size-11 items-center justify-center rounded-full border border-line bg-white/[0.03] text-slate-300 transition hover:-translate-y-0.5 hover:border-accent/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
   return (
     <section
       aria-labelledby="hero-heading"
       className="relative isolate flex min-h-screen items-center overflow-hidden"
     >
-      {/* Background glows */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-40 top-0 size-[32rem] rounded-full bg-blue-600/20 blur-[120px]" />
-        <div className="absolute -right-32 bottom-0 size-[30rem] rounded-full bg-purple-600/20 blur-[120px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-      </div>
-
       <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-6 pb-12 pt-10 sm:gap-14 sm:px-8 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-28">
         <motion.div
           variants={container}
@@ -45,18 +38,18 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
         >
           <motion.p
             variants={item}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-sm text-slate-300"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.04] px-4 py-1.5 text-sm text-slate-300"
           >
             <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full rounded-full bg-blue-400/60 motion-safe:animate-ping" />
-              <span className="relative inline-flex size-2 rounded-full bg-blue-400" />
+              <span className="absolute inline-flex size-full rounded-full bg-accent/60 motion-safe:animate-ping" />
+              <span className="relative inline-flex size-2 rounded-full bg-accent" />
             </span>
             {experienceLabel} experience · {profile.company}
           </motion.p>
 
           <motion.p
             variants={item}
-            className="mt-8 font-mono text-sm tracking-wide text-blue-300"
+            className="mt-8 font-mono text-sm tracking-wide text-accent"
           >
             Hello, I&apos;m
           </motion.p>
@@ -71,7 +64,7 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
 
           <motion.p
             variants={item}
-            className="mt-3 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-2xl font-medium text-transparent sm:text-3xl"
+            className="mt-3 text-2xl font-medium text-accent sm:text-3xl"
           >
             {profile.title}
           </motion.p>
@@ -91,7 +84,7 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
             {profile.focus.map((f) => (
               <li
                 key={f}
-                className="rounded-full border border-blue-400/20 bg-blue-400/[0.07] px-3 py-1 text-xs font-medium text-blue-200 sm:text-sm"
+                className="rounded-full border border-accent/25 bg-accent-tint px-3 py-1 text-xs font-medium text-accent sm:text-sm"
               >
                 {f}
               </li>
@@ -104,14 +97,14 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
           >
             <a
               href="#projects"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-7 py-3.5 text-sm font-semibold text-[#ffffff] shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:shadow-purple-500/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent-fill px-7 py-3.5 text-sm font-semibold text-on-accent transition-colors hover:bg-accent-fill-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               View My Projects
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-blue-400/50 hover:bg-white/[0.07] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-line-strong bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/[0.07] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               <Mail className="size-4" />
               Contact Me
@@ -151,7 +144,7 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
                 <TechChip
                   key={t}
                   name={t}
-                  className="transition hover:border-purple-400/40 hover:text-white"
+                  className="transition hover:border-accent/40 hover:text-white"
                 />
               ))}
             </ul>

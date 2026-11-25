@@ -8,16 +8,12 @@ export function Credentials() {
     <section
       id="credentials"
       aria-labelledby="credentials-heading"
-      className="relative isolate overflow-hidden border-t border-white/5"
+      className="relative isolate overflow-hidden border-t border-line"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -right-40 top-10 size-[28rem] rounded-full bg-indigo-600/15 blur-[120px]" />
-        <div className="absolute -left-40 bottom-10 size-[26rem] rounded-full bg-blue-600/15 blur-[120px]" />
-      </div>
 
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
         <Reveal>
-          <p className="font-mono text-sm tracking-wide text-blue-300">
+          <p className="font-mono text-sm tracking-wide text-accent">
             {credentialsSection.eyebrow}
           </p>
           <h2

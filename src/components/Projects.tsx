@@ -12,16 +12,12 @@ export function Projects() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="relative isolate overflow-hidden border-t border-white/5"
+      className="relative isolate overflow-hidden border-t border-line"
     >
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-40 top-20 size-[30rem] rounded-full bg-blue-600/15 blur-[120px]" />
-        <div className="absolute -right-40 bottom-40 size-[28rem] rounded-full bg-purple-600/15 blur-[120px]" />
-      </div>
 
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
         <Reveal>
-          <p className="font-mono text-sm tracking-wide text-blue-300">{projectsSection.eyebrow}</p>
+          <p className="font-mono text-sm tracking-wide text-accent">{projectsSection.eyebrow}</p>
           <h2
             id="projects-heading"
             className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl"

@@ -41,7 +41,7 @@ export function MobileMenu() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-        className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-blue-400/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+        className="inline-flex size-10 items-center justify-center rounded-full border border-line bg-white/[0.04] text-slate-300 transition hover:border-accent/50 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         {open ? (
           <X className="size-5" aria-hidden="true" />
@@ -54,16 +54,16 @@ export function MobileMenu() {
         <div
           id="mobile-menu"
           ref={panelRef}
-          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-white/10 bg-background shadow-xl shadow-black/20"
+          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-line bg-background shadow-md"
         >
           <nav aria-label="Mobile" className="mx-auto w-full max-w-6xl px-4 py-3 sm:px-6">
             <ul>
               {mobileNavLinks.map((l) => (
-                <li key={l.href} className="border-b border-white/5 last:border-b-0">
+                <li key={l.href} className="border-b border-line last:border-b-0">
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-md px-3 py-3 text-base font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-blue-400"
+                    className="block rounded-md px-3 py-3 text-base font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
                   >
                     {l.label}
                   </a>

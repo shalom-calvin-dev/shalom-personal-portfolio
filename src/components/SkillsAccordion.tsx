@@ -21,10 +21,10 @@ export function SkillsAccordion() {
     content: (
       <ul
         aria-label={`${category.title} skills`}
-        className="flex flex-wrap gap-2 rounded-xl border border-white/10 bg-card p-4"
+        className="flex flex-wrap gap-2 rounded-xl border border-line bg-card p-4"
       >
         {category.skills.map((skill) => (
-          <TechChip key={skill.name} name={skill.name} className="max-w-full" />
+          <TechChip key={skill.name} name={skill.name} note={skill.note} className="max-w-full" />
         ))}
       </ul>
     ),
