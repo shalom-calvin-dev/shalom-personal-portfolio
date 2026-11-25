@@ -6,7 +6,7 @@ A modern, responsive personal portfolio website for **Shalom Calvin**, a Softwar
 
 ## Overview
 
-The site is a single-page portfolio presenting professional background, skills, project work and credentials. It uses a premium dark-navy design with blue and purple accents, and includes a matching light theme.
+The site is a single-page portfolio presenting professional background, skills, project work and credentials. It uses a dark-navy design with a single flat blue accent, and includes a matching light theme.
 
 ## Tech stack
 
@@ -104,13 +104,7 @@ Logos and trademarks belong to their respective owners. Technologies without a s
 
 ## Configuration
 
-The site URL is intentionally not hardcoded. Canonical links, Open Graph URLs, `robots.txt` and `sitemap.xml` use it only when it is available.
-
-| Variable | Purpose |
-| --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Final public URL, e.g. `https://your-domain.example`. Optional. |
-
-If `NEXT_PUBLIC_SITE_URL` is not set, Vercel's automatically provided `VERCEL_PROJECT_PRODUCTION_URL` is used. With neither set (such as local development), URL-dependent metadata is simply omitted.
+The public site URL is a single constant, `SITE_URL` in [`src/lib/site.ts`](src/lib/site.ts). It drives `metadataBase`, the canonical link, `og:url`, the Open Graph and Twitter image URLs, `robots.txt` and `sitemap.xml`. When you move to a custom domain, change that one constant (no trailing slash) and redeploy.
 
 ## Deploying to Vercel
 
@@ -118,5 +112,5 @@ If `NEXT_PUBLIC_SITE_URL` is not set, Vercel's automatically provided `VERCEL_PR
 2. In [Vercel](https://vercel.com/), choose **Add New → Project** and import the repository.
 3. Keep the detected **Next.js** framework preset. The default build command (`npm run build`) and install command (`npm install`) work as-is.
 4. Click **Deploy**.
-5. Once the final URL is known (the Vercel URL or a custom domain), set `NEXT_PUBLIC_SITE_URL` under **Project Settings → Environment Variables** and redeploy so canonical and social-sharing URLs are generated.
+5. If you later add a custom domain, update `SITE_URL` in `src/lib/site.ts` and redeploy so canonical and social-sharing URLs use it.
 6. Optionally add a custom domain under **Project Settings → Domains**, and configure any security headers in `vercel.json` or `next.config.ts`.

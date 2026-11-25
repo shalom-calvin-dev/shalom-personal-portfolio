@@ -22,7 +22,7 @@ export function ExperienceAccordion() {
     ),
     // No "Current" badge here: the date line already ends in "Present", and the badge crowds narrow headers.
     content: (
-      <div className="rounded-xl border border-white/10 bg-card p-4">
+      <div className="rounded-xl border border-line bg-card p-4">
         {entry.location && (
           <p className="flex items-center gap-1.5 text-xs text-slate-400">
             <MapPin className="size-3" aria-hidden="true" />
@@ -39,7 +39,7 @@ export function ExperienceAccordion() {
             <li key={h} className="flex items-start gap-3 text-sm leading-relaxed text-slate-400">
               <span
                 aria-hidden="true"
-                className="mt-2 size-1.5 shrink-0 rounded-full bg-gradient-to-br from-blue-400 to-purple-400"
+                className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
               />
               {h}
             </li>

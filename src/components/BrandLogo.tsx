@@ -23,7 +23,7 @@ export function BrandLogo({ brand, size = "md" }: { brand: BrandKey; size?: keyo
   return (
     <span
       aria-hidden="true"
-      className={`${tile} inline-flex shrink-0 items-center justify-center rounded-md bg-[#f8fafc] ring-1 ring-[#0f172a]/10`}
+      className={`${tile} inline-flex shrink-0 items-center justify-center rounded-md bg-[#fafaf9] ring-1 ring-[#1c1917]/10`}
     >
       <Image
         src={brandLogos[brand].src}

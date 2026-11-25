@@ -3,12 +3,18 @@
 // skills without a matching icon are shown as text only.
 export type CategoryIconKey = "server" | "layers" | "workflow" | "cloud" | "braces";
 
-export type Skill = { name: string };
+export type Skill = {
+  name: string;
+  /** Optional qualifier shown as a small muted secondary line (desktop) or muted text after the name (mobile chips). */
+  note?: string;
+};
 
 export type SkillCategory = {
   id: string;
   title: string;
   icon: CategoryIconKey;
+  /** Lay this category's skills out in one column on desktop (default: the responsive 1-2 column grid). */
+  singleColumn?: boolean;
   skills: readonly Skill[];
 };
 
@@ -49,8 +55,9 @@ export const skillCategories: readonly SkillCategory[] = [
     id: "power-platform",
     title: "Microsoft Power Platform",
     icon: "workflow",
+    singleColumn: true,
     skills: [
-      { name: "Power Apps (Canvas & Model-Driven)" },
+      { name: "Power Apps", note: "Canvas & Model-Driven" },
       { name: "Power Automate" },
       { name: "Power BI" },
       { name: "Power Automate Desktop" },

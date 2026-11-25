@@ -43,35 +43,39 @@ export function TagList({ tags, label }: { tags: readonly string[]; label: strin
 export function KindBadge({ project }: { project: Project }) {
   const professional = project.kind === "professional";
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium ${
-        professional
-          ? "border-blue-400/30 bg-blue-400/10 text-blue-200"
-          : "border-purple-400/30 bg-purple-400/10 text-purple-200"
-      }`}
-    >
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300">
       {professional && <Building2 className="size-3" aria-hidden="true" />}
       {professional ? `Professional · ${project.organization}` : "Personal project"}
     </span>
   );
 }
 
-/** Professional/personal badge plus the optional domain label. */
-export function ProjectBadges({ project }: { project: Project }) {
+/** Flat accent badge. Sits at the right end of the project meta row (see ProjectBadges). */
+export function FeaturedBadge() {
+  return (
+    <span className="ml-auto inline-flex items-center rounded-full border border-accent/30 bg-accent-tint px-2.5 py-1 text-xs font-semibold text-accent">
+      Featured
+    </span>
+  );
+}
+
+/** Professional/personal badge plus the optional domain label. Featured cards add the Featured badge on the right. */
+export function ProjectBadges({ project, featured = false }: { project: Project; featured?: boolean }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <KindBadge project={project} />
       {project.domain && (
-        <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300">
+        <span className="inline-flex items-center rounded-full border border-line bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300">
           <span className="sr-only">Domain: </span>
           {project.domain}
         </span>
       )}
       {project.client && (
-        <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300">
+        <span className="inline-flex items-center rounded-full border border-line bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-slate-300">
           Client: {project.client}
         </span>
       )}
+      {featured && <FeaturedBadge />}
     </div>
   );
 }
@@ -87,7 +91,7 @@ export function ProjectLinks({ links, name }: { links?: readonly ProjectLink[]; 
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${l.label}: ${name} (opens in a new tab)`}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-blue-400/50 hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            className="inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-2 text-sm font-medium text-slate-100 transition hover:border-accent/50 hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             {l.label}
             <ExternalLink className="size-3.5" aria-hidden="true" />

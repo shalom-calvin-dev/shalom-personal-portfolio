@@ -24,6 +24,6 @@ export const profile = {
     "Power Automate",
     "Azure",
   ],
-  // Path under /public. Set to null to fall back to the gradient placeholder.
+  // Path under /public. Set to null to fall back to the placeholder.
   portrait: "/profile.jpg" as string | null,
 } as const;
