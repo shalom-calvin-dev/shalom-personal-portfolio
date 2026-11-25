@@ -1,4 +1,5 @@
 import { projects, projectsSection } from "@/lib/projects";
+import { Accordion } from "./Accordion";
 import { FeaturedProjectCard } from "./FeaturedProjectCard";
 import { ProjectCard } from "./ProjectCard";
 import { Reveal } from "./Reveal";
@@ -43,18 +44,32 @@ export function Projects() {
           ))}
         </ul>
 
-        <Reveal className="mt-16">
+        {/* md and up: the original heading. Below md it is replaced by the accordion row. */}
+        <Reveal className="mt-16 hidden md:block">
           <h3 className="text-xl font-semibold text-white sm:text-2xl">More projects</h3>
         </Reveal>
-        <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {others.map((p, i) => (
-            <li key={p.id}>
-              <Reveal delay={(i % 3) * 0.08} className="h-full">
-                <ProjectCard project={p} />
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+        {/* One accordion row below md; from md up its header is hidden and the cards show as before. */}
+        <Accordion
+          alwaysOpenFromMd
+          className="mt-10 md:mt-8"
+          items={[
+            {
+              id: "more-projects",
+              title: `More projects (${others.length})`,
+              content: (
+                <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {others.map((p, i) => (
+                    <li key={p.id}>
+                      <Reveal delay={(i % 3) * 0.08} className="h-full">
+                        <ProjectCard project={p} />
+                      </Reveal>
+                    </li>
+                  ))}
+                </ul>
+              ),
+            },
+          ]}
+        />
       </div>
     </section>
   );

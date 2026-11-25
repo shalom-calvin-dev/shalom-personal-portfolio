@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { getExperienceLabel } from "@/lib/experience-label";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -14,29 +15,33 @@ const geistMono = Geist_Mono({
 });
 
 const title = "Shalom Calvin | Software Engineer – Backend, Full Stack & Power Platform";
-const description =
-  "Portfolio of Shalom Calvin, a Software Engineer with 3+ years of experience building scalable backend APIs, modern web applications and Microsoft Power Platform automation solutions.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  authors: [{ name: "Shalom Calvin" }],
-  // metadataBase / canonical / og:url are only set once the real site URL is known (see src/lib/site.ts).
-  ...(siteUrl ? { metadataBase: siteUrl, alternates: { canonical: "/" } } : {}),
-  openGraph: {
-    type: "website",
-    siteName: "Shalom Calvin",
+// The years value is computed from the career start date, so metadata is generated rather than static.
+// The meta, Open Graph and Twitter descriptions all use this one string.
+export async function generateMetadata(): Promise<Metadata> {
+  const description = `Portfolio of Shalom Calvin, a Software Engineer with ${await getExperienceLabel()} of experience building scalable backend APIs, modern web applications and Microsoft Power Platform automation solutions.`;
+
+  return {
     title,
     description,
-    locale: "en_US",
-    ...(siteUrl ? { url: "/" } : {}),
-  },
-  twitter: {
-    card: "summary_large_image",
-    title,
-    description,
-  },
-};
+    authors: [{ name: "Shalom Calvin" }],
+    // metadataBase / canonical / og:url are only set once the real site URL is known (see src/lib/site.ts).
+    ...(siteUrl ? { metadataBase: siteUrl, alternates: { canonical: "/" } } : {}),
+    openGraph: {
+      type: "website",
+      siteName: "Shalom Calvin",
+      title,
+      description,
+      locale: "en_US",
+      ...(siteUrl ? { url: "/" } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 const themeInitScript = `(function(){var d=document.documentElement;var t="dark";try{var s=localStorage.getItem("theme");if(s==="light"||s==="dark"){t=s}else if(window.matchMedia("(prefers-color-scheme: light)").matches){t="light"}}catch(e){}d.setAttribute("data-theme",t)})();`;
 

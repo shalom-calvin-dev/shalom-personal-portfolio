@@ -1,8 +1,12 @@
 import { about } from "@/lib/about";
+import { getExperienceLabel } from "@/lib/experience-label";
 import { HighlightCard } from "./HighlightCard";
 import { Reveal } from "./Reveal";
 
-export function About() {
+export async function About() {
+  // Same daily-cached value as the Hero and the page metadata.
+  const experienceLabel = await getExperienceLabel();
+
   return (
     <section
       id="about"
@@ -28,8 +32,9 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.05} className="mt-10 space-y-5 text-base leading-relaxed text-slate-400 sm:text-lg">
-            {about.paragraphs.map((p) => (
-              <p key={p}>{p}</p>
+            {about.paragraphs.map((p, i) => (
+              // Static list, so the index is a stable key (and keeps the raw "{years}" template out of the page payload).
+              <p key={i}>{p.replaceAll("{years}", experienceLabel)}</p>
             ))}
           </Reveal>
         </div>

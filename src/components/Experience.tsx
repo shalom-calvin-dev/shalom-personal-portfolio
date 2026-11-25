@@ -1,4 +1,5 @@
 import { experience, experienceSection } from "@/lib/experience";
+import { ExperienceAccordion } from "./ExperienceAccordion";
 import { ExperienceCard } from "./ExperienceCard";
 import { Reveal } from "./Reveal";
 
@@ -27,7 +28,13 @@ export function Experience() {
           </h2>
         </Reveal>
 
-        <ol className="relative mt-14 space-y-10">
+        {/* Mobile (below md): numbered single-open accordion, current role open. */}
+        <Reveal className="mt-10 md:hidden">
+          <ExperienceAccordion />
+        </Reveal>
+
+        {/* md and up: the original timeline, unchanged (including its "Key projects" list). */}
+        <ol className="relative mt-14 hidden space-y-10 md:block">
           {/* Timeline rail */}
           <span
             aria-hidden="true"

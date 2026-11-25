@@ -1,7 +1,6 @@
 export const profile = {
   name: "Shalom Calvin",
   title: "Software Engineer",
-  experience: "3+ years",
   company: "Star Knowledge Ventures",
   focus: ["Backend Development", "Full Stack Development", "Microsoft Power Platform"],
   intro:
