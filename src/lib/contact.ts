@@ -2,9 +2,10 @@ import { profile } from "./profile";
 
 export const contactSection = {
   eyebrow: "Contact",
-  heading: "Let's Build Something Together",
+  heading: "Open to backend and Power Platform roles",
+  emailLabel: "Email",
   intro:
-    "I'm always interested in connecting with developers, exploring new opportunities and discussing interesting software engineering projects.",
+    "I'm open to remote roles and relocation worldwide. The quickest way to reach me is email.",
 } as const;
 
 export type SocialLink = {

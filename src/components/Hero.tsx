@@ -5,6 +5,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import { profile } from "@/lib/profile";
 import { GithubIcon, LinkedinIcon } from "./icons";
 import { PortraitFrame } from "./PortraitFrame";
+import { ResumeButton } from "./ResumeButton";
 import { TechChip } from "./TechChip";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -93,7 +94,7 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
 
           <motion.div
             variants={item}
-            className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start"
+            className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start"
           >
             <a
               href="#projects"
@@ -109,7 +110,12 @@ export function Hero({ experienceLabel }: { experienceLabel: string }) {
               <Mail className="size-4" />
               Contact Me
             </a>
+            <ResumeButton />
           </motion.div>
+
+          <motion.p variants={item} className="mt-3 text-center text-xs text-slate-400 lg:text-left">
+            {profile.resumeLabel}
+          </motion.p>
 
           <motion.div
             variants={item}
