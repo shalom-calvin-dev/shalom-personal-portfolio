@@ -11,11 +11,11 @@ export function ResumeButton({ className = "" }: { className?: string }) {
       href={profile.resumeUrl}
       download
       rel="noopener"
-      aria-label={`Download résumé (${profile.resumeLabel})`}
+      aria-label={`Download resume (${profile.resumeLabel})`}
       className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-line-strong bg-white/[0.03] px-7 py-3.5 text-sm font-semibold text-slate-100 transition hover:-translate-y-0.5 hover:border-accent/50 hover:bg-white/[0.07] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${className}`}
     >
       <Download className="size-4" aria-hidden="true" />
-      Download Résumé
+      Download Resume
     </a>
   );
 }
