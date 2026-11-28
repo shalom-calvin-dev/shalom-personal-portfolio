@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getExperienceLabel } from "@/lib/experience-label";
+import { profile } from "@/lib/profile";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -44,6 +45,17 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+// Person structured data. Every value comes from the same constants the visible page uses.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.title,
+  url: SITE_URL,
+  email: `mailto:${profile.email}`,
+  sameAs: [profile.github, profile.linkedin],
+};
+
 const themeInitScript = `(function(){var d=document.documentElement;var t="dark";try{var s=localStorage.getItem("theme");if(s==="light"||s==="dark"){t=s}else if(window.matchMedia("(prefers-color-scheme: light)").matches){t="light"}}catch(e){}d.setAttribute("data-theme",t)})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -59,6 +71,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          // "<" is escaped so no value can close the script tag.
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
+        />
         <a
           href="#top"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-[#ffffff] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[#1c1917]"
